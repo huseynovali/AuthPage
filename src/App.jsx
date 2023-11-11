@@ -23,7 +23,7 @@ function App() {
 
   return (
     <div className="w-full h-screen flex justify-center items-center">
-      <div className="flex w-[80%] relative">
+      <div className="flex h-[500px] w-[1211px] relative">
         <div
           ref={coverRef}
           className={classNames(
@@ -37,7 +37,7 @@ function App() {
             <div>
               <p>{authText.register.text}</p>
               <button
-                className="px-10 py-3 bg-slate-200"
+                className="px-10 py-3 bg-slate-200 mt-10 ml-[calc((100%_-_120px)/2)] outline-none"
                 onClick={() => setChange("register")}
               >
                 Register
@@ -47,7 +47,7 @@ function App() {
             <div>
               <p>{authText.login.text}</p>
               <button
-                className="px-10 py-3 bg-slate-200 mt-10"
+                className="px-10 py-3 bg-slate-200 mt-10 ml-[calc((100%_-_120px)/2)] outline-none"
                 onClick={() => setChange("login")}
               >
                 Login
@@ -55,8 +55,7 @@ function App() {
             </div>
           )}
         </div>
-        <Login />
-        <Register />
+        {change == "login" ? <Login /> : <Register />}
       </div>
     </div>
   );
