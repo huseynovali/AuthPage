@@ -24,16 +24,26 @@ function App() {
       <div className="flex w-[80%] relative">
         <div
           className={classNames(
-            "cover absolute w-[50%] h-full bg-red-500 flex justify-center items-center",
+            "cover absolute w-[50%] h-full bg-red-500 flex justify-center items-center transition-transform",
             change == "login"
-              ? "left-1/2 rounded-e-2xl"
-              : "left-0 rounded-s-2xl"
+              ? "translate-x-[100%] rounded-e-2xl"
+              : "translate-x-0 rounded-s-2xl"
           )}
         >
           {change == "login" ? (
-            <button className="px-10 py-3 bg-slate-200">Register</button>
+            <button
+              className="px-10 py-3 bg-slate-200"
+              onClick={() => setChange("register")}
+            >
+              Register
+            </button>
           ) : (
-            <button className="px-10 py-3 bg-slate-200">Login</button>
+            <button
+              className="px-10 py-3 bg-slate-200"
+              onClick={() => setChange("login")}
+            >
+              Login
+            </button>
           )}
         </div>
         <Login />
